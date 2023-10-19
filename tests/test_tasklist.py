@@ -2,6 +2,7 @@ from tasks.tasklist import TaskList
 
 import pytest
 
+
 class TestCodeUnderTest:
 
     # add_task adds a new task to the tasks list
@@ -27,7 +28,7 @@ class TestCodeUnderTest:
         assert len(task_list.tasks) == 0
         assert len(task_list.archived_tasks) == 1
         assert task_list.archived_tasks[0].name == "Task 1"
-        assert task_list.archived_tasks[0].completed == True
+        assert task_list.archived_tasks[0].completed is True
 
     # add_task with empty name raises ValueError
     def test_add_task_with_empty_name_raises_value_error(self):

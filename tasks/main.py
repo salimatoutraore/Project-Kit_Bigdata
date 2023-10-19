@@ -6,13 +6,15 @@ logging.basicConfig(
     level=logging.INFO,
     format='%(asctime)s [INFO] %(message)s',
     handlers=[
-        logging.FileHandler('logs/info.log'), #Affiche les INFOS dans le fichier app.log
-        #logging.StreamHandler() #Affiche les INFOS dans le terminal
+        # Affiche les INFOS dans le fichier app.log
+        logging.FileHandler('logs/info.log'),
+        # logging.StreamHandler() #Affiche les INFOS dans le terminal
     ]
 )
 
 # Configuration pour le débogage
-debug_logger = logging.getLogger("debug_logger")  # Utilisez le même nom ici (avec un underscore)
+# Utilisez le même nom ici (avec un underscore)
+debug_logger = logging.getLogger("debug_logger")
 debug_logger.setLevel(logging.DEBUG)
 debug_handler = logging.FileHandler('logs/debug.log')
 debug_handler.setLevel(logging.DEBUG)
@@ -29,6 +31,7 @@ error_formatter = logging.Formatter('%(asctime)s [ERROR] %(message)s')
 error_handler.setFormatter(error_formatter)
 error_logger.addHandler(error_handler)
 
+
 def display_menu():
     print("\nMenu :")
     print("1. Ajouter une tâche")
@@ -38,6 +41,7 @@ def display_menu():
     print("5. Afficher la liste des tâches archivées")
     print("6. Quitter")
 
+
 def main():
     task_list = TaskList()
 
@@ -46,10 +50,13 @@ def main():
         choice = input("Entrez le numéro de votre choix : ")
 
         if choice == "1":
-            name = input("Nom de la tâche : ")
-            description = input("Description de la tâche : ")
-            task_list.add_task(name, description)
-            print(f"Tâche '{name}' ajoutée à la liste.")
+            try:
+                name = input("Nom de la tâche : ")
+                description = input("Description de la tâche : ")
+                task_list.add_task(name, description)
+                print(f"Tâche '{name}' ajoutée à la liste.")
+            except ValueError as e:
+                print(f"Erreur: {e}")
         elif choice == "2":
             task_name = input("Nom de la tâche à supprimer : ")
             task_list.remove_task(task_name)
@@ -68,6 +75,7 @@ def main():
             break
         else:
             print("Choix non valide. Veuillez entrer un numéro valide.")
+
 
 if __name__ == "__main__":
     main()

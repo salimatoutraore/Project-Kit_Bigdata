@@ -2,6 +2,7 @@ from tasks.task import Task
 
 import pytest
 
+
 class TestCodeUnderTest:
 
     # create a task with a name and description
@@ -13,9 +14,9 @@ class TestCodeUnderTest:
     # mark a task as completed
     def test_mark_task_as_completed(self):
         task = Task("Task 1", "Description 1")
-        assert task.completed == False
+        assert task.completed is False
         task.mark_completed()
-        assert task.completed == True
+        assert task.completed is True
 
     # print a task's string representation
     def test_print_task_string_representation(self):
@@ -43,8 +44,8 @@ class TestCodeUnderTest:
     # mark a task as completed multiple times
     def test_mark_task_as_completed_multiple_times(self):
         task = Task("Task 1", "Description 1")
-        assert task.completed == False
+        assert task.completed is False
         task.mark_completed()
-        assert task.completed == True
+        assert task.completed is True
         task.mark_completed()
-        assert task.completed == True
+        assert task.completed is True
