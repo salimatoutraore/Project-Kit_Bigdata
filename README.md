@@ -9,7 +9,6 @@ Une bibliothèque Python pour la gestion efficace des tâches, des projets et de
   - [Description du projet](#description-du-projet)
   - [Installation](#installation)
   - [Utilisation](#utilisation)
-  - [Exemples d'utilisation](#exemples-dutilisation)
   - [Contributions](#contributions)
   - [Auteurs](#auteurs)
 
@@ -37,27 +36,13 @@ Pour installer cette bibliothèque, suivez ces étapes :
 
 ## Utilisation
 
-Voici comment utiliser cette bibliothèque :
+Pour lancer l'application, exécutez la commande suivante :
 
-1. Importez la classe `TaskList` dans votre code.
-2. Créez une instance de `TaskList`.
-3. Utilisez les méthodes de la classe `TaskList` pour ajouter, marquer comme terminée, supprimer des tâches et afficher la liste des tâches en cours.
-
-## Exemples d'utilisation
-
-Voici quelques exemples d'utilisation de la bibliothèque :
-
-```python
-# Utilisation de la classe TaskList pour ajouter une tâche
-task_list = TaskList()
-task_list.add_task("Faire les courses", "Acheter du lait et du pain")
-# Utilisation de la classe TaskList pour marquer une tâche comme terminée
-task_list.mark_task_completed("Faire les courses")
-# Utilisation de la classe TaskList pour supprimer une tâche
-task_list.remove_task("Faire les courses")
-# Utilisation de la classe TaskList pour afficher la liste des tâches en cours
-task_list.display_tasks()
+```bash
+python -m tasks.main
 ```
+
+Vous pourrez utiliser les fonctionnalités de gestion de tâches via le menu.
 
 ## Contributions
 
